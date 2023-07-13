@@ -1,0 +1,155 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Volunteer Page</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+<body>
+    <h1>Volunteer Page</h1>
+    <form onsubmit="submitForm(event)">
+        <label for="type">Select Type:</label><br />
+        <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')">
+        <label for="type-individual">Individual</label><br />
+
+        <input type="checkbox" name="type" value="company" id="type-company" onclick="handleCheckboxChange('type-company')">
+        <label for="type-company">Company</label><br />
+
+        <input type="checkbox" name="type" value="donate" id="type-donate" onclick="handleCheckboxChange('type-donate')">
+        <label for="type-donate">Donate Items</label><br />
+
+        <div id="company-section" style="display: none;">
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" /><br />
+        </div>
+
+        <div id="item-section" style="display: none;">
+            <label for="item">Item Name:</label>
+            <input type="text" id="item" /><br />
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" /><br />
+        </div>
+
+        <div id="individual-section" style="display: none;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required /><br />
+
+            <label for="number">Number:</label>
+            <input type="text" id="number" required /><br />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required /><br />
+
+            <label for="message">Message:</label><br />
+            <textarea id="message" required></textarea><br />
+        </div>
+
+        <input type="submit" id="submit-btn" value="Submit" style="display: none;" />
+
+    </form>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBosHwwgKcr7rIZq-tBByTVPtuSGXdvI6M",
+            authDomain: "sevahandstest.firebaseapp.com",
+            databaseURL: "https://sevahandstest-default-rtdb.firebaseio.com",
+            projectId: "sevahandstest",
+            storageBucket: "sevahandstest.appspot.com",
+            messagingSenderId: "915339149367",
+            appId: "1:915339149367:web:d43ebd85eaa83f61183fb2"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var number = document.getElementById('number').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            var type = '';
+            var company = '';
+            var item = '';
+            var quantity = '';
+
+            var typeCheckbox = document.querySelectorAll('input[name="type"]:checked')[0];
+            if (typeCheckbox) {
+                type = typeCheckbox.value;
+                if (type === 'company') {
+                    company = document.getElementById('company').value;
+                } else if (type === 'donate') {
+                    item = document.getElementById('item').value;
+                    quantity = document.getElementById('quantity').value;
+                }
+            }
+
+            firebase.database().ref('volunteers').push({
+                name: name,
+                number: number,
+                email: email,
+                message: message,
+                type: type,
+                company: company,
+                item: item,
+                quantity: quantity
+            });
+
+            document.getElementById('name').value = '';
+            document.getElementById('number').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Reset the additional fields and hide the corresponding sections
+            document.getElementById('company').value = '';
+            document.getElementById('item').value = '';
+            document.getElementById('quantity').value = '';
+            document.getElementById('company-section').style.display = 'none';
+            document.getElementById('item-section').style.display = 'none';
+        }
+
+
+
+        function handleCheckboxChange(checkboxId) {
+            var checkboxes = document.querySelectorAll('input[name="type"]');
+            var checkedCheckbox = document.getElementById(checkboxId);
+            var companySection = document.getElementById('company-section');
+            var itemSection = document.getElementById('item-section');
+            var individualSection = document.getElementById('individual-section');
+            var submitBtn = document.getElementById('submit-btn');
+
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox !== checkedCheckbox) {
+                    checkbox.checked = false;
+                }
+            });
+
+            if (checkedCheckbox.id === 'type-company') {
+                companySection.style.display = 'block';
+                itemSection.style.display = 'none';
+                individualSection.style.display = 'block';
+                submitBtn.style.display = 'block';
+            } else if (checkedCheckbox.id === 'type-donate') {
+                companySection.style.display = 'none';
+                itemSection.style.display = 'block';
+                individualSection.style.display = 'block';
+                submitBtn.style.display = 'block';
+            } else if (checkedCheckbox.id === 'type-individual') {
+                companySection.style.display = 'none';
+                itemSection.style.display = 'none';
+                individualSection.style.display = 'block';
+                submitBtn.style.display = 'block';
+            } else {
+                companySection.style.display = 'none';
+                itemSection.style.display = 'none';
+                individualSection.style.display = 'none';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+    </script>
+</body>
+</html>

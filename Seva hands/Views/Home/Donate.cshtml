@@ -1,0 +1,124 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>SEVA HANDS</title>
+
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link rel="stylesheet" href="~/css/responsive.css" />
+</head>
+<!-- Add your HTML form code here -->
+<style>
+    .message-box {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+        }
+</style>
+
+@{
+    string merchantId = "22828559";
+    string merchantKey = "ehmycemwotug6";
+    string returnUrl = "https://www.example.com/success";
+    string cancelUrl = "https://www.example.com/cancel";
+    string notifyUrl = "https://www.example.com/notify";
+    string nameFirst = "John";
+    string nameLast = "Doe";
+    string emailAddress = "john@doe.com";
+    string cellNumber = "0823456789";
+    string mPaymentId = "01AB";
+    decimal amount = 100;
+    string itemName = "donation";
+    string itemDescription = "donation";
+    int customInt1 = 2;
+    string customStr1 = "Extra order information";
+    bool emailConfirmation = true;
+    string confirmationAddress = "john@doe.com";
+    string paymentMethod = "cc";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation Page</title>
+</head>
+<body>
+    <h2>Donation Page</h2>
+
+    <form method="post" action="https://sandbox.payfast.co.za/eng/process">
+        <input type="hidden" name="merchant_id" value="@merchantId">
+        <input type="hidden" name="merchant_key" value="@merchantKey">
+        <input type="hidden" name="return_url" value="@returnUrl">
+        <input type="hidden" name="cancel_url" value="@cancelUrl">
+        <input type="hidden" name="notify_url" value="@notifyUrl">
+
+        <label for="name_first">First Name:</label>
+        <input type="text" id="name_first" name="name_first" value="@nameFirst"><br>
+
+        <label for="name_last">Last Name:</label>
+        <input type="text" id="name_last" name="name_last" value="@nameLast"><br>
+
+        <label for="email_address">Email Address:</label>
+        <input type="email" id="email_address" name="email_address" value="@emailAddress"><br>
+
+        <label for="cell_number">Cell Number:</label>
+        <input type="text" id="cell_number" name="cell_number" value="@cellNumber"><br>
+
+        <input type="hidden" name="m_payment_id" value="@mPaymentId">
+
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" value="@amount"><br>
+
+        <input type="hidden" name="item_name" value="@itemName">
+
+        <input type="hidden" name="item_description" value="@itemDescription">
+
+        <input type="hidden" name="custom_int1" value="@customInt1">
+
+        <input type="hidden" name="custom_str1" value="@customStr1">
+
+        <input type="hidden" name="email_confirmation" value="@(emailConfirmation ? 1 : 0)">
+
+        <label for="confirmation_address">Confirmation Address:</label>
+        <input type="email" id="confirmation_address" name="confirmation_address" value="@confirmationAddress"><br>
+
+        <input type="hidden" name="payment_method" value="@paymentMethod">
+
+        <button type="submit">Donate</button>
+    </form>
+</body>
+</html>
