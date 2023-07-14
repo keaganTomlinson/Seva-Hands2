@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Page</title>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+</head>
+<body>
+    <div id="eventsContainer"></div>
+
+    <script>
+        var firebaseConfig = {
+             apiKey: "AIzaSyBosHwwgKcr7rIZq-tBByTVPtuSGXdvI6M",
+            authDomain: "sevahandstest.firebaseapp.com",
+            databaseURL: "https://sevahandstest-default-rtdb.firebaseio.com",
+            projectId: "sevahandstest",
+            storageBucket: "sevahandstest.appspot.com",
+            messagingSenderId: "915339149367",
+            appId: "1:915339149367:web:d43ebd85eaa83f61183fb2"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var db = firebase.firestore();
+        var eventsContainer = document.getElementById('eventsContainer');
+
+        db.collection("Events").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                var event = doc.data();
+                var eventElement = createEventElement(event);
+                eventsContainer.appendChild(eventElement);
+            });
+        });
+
+        function createEventElement(event) {
+            var eventElement = document.createElement('div');
+
+            var titleElement = document.createElement('h3');
+            titleElement.textContent = event.name;
+            eventElement.appendChild(titleElement);
+
+            var dateElement = document.createElement('p');
+            dateElement.textContent = 'Date: ' + formatEventDate(event.Date);
+            eventElement.appendChild(dateElement);
+
+            var descriptionElement = document.createElement('p');
+            descriptionElement.textContent = event.Description;
+            eventElement.appendChild(descriptionElement);
+
+            return eventElement;
+        }
+
+         function formatEventDate(date) {
+      var options = { day: 'numeric', month: 'long', year: 'numeric' };
+      return date ? new Date(date.toDate()).toLocaleDateString(undefined, options) : '';
+    }
+    </script>
+</body>
+</html>
