@@ -1,56 +1,81 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width">
     <title>Volunteer Page</title>
+    <style>
+        /* Add rounded edges to input elements */
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: black; /* Set background color to black */
+            color: white; /* Set text color to white */
+            border: none; /* Remove border */
+            border-radius: 10px; /* Add rounded edges */
+            padding: 10px 20px; /* Add padding for better appearance */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+    </style>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 </head>
 <body>
     <h1>Volunteer Page</h1>
     <form onsubmit="submitForm(event)">
-        <label for="type">Select Type:</label><br />
-        <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')">
-        <label for="type-individual">Individual</label><br />
+        <div>
+            <label for="type">Select Type:</label><br>
+            <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')">
+            <label for="type-individual">Individual</label><br>
 
-        <input type="checkbox" name="type" value="company" id="type-company" onclick="handleCheckboxChange('type-company')">
-        <label for="type-company">Company</label><br />
+            <input type="checkbox" name="type" value="company" id="type-company" onclick="handleCheckboxChange('type-company')">
+            <label for="type-company">Company</label><br>
 
-        <input type="checkbox" name="type" value="donate" id="type-donate" onclick="handleCheckboxChange('type-donate')">
-        <label for="type-donate">Donate Items</label><br />
+            <input type="checkbox" name="type" value="donate" id="type-donate" onclick="handleCheckboxChange('type-donate')">
+            <label for="type-donate">Donate Items</label><br>
+        </div>
 
         <div id="company-section" style="display: none;">
             <label for="company">Company Name:</label>
-            <input type="text" id="company" /><br />
+            <input type="text" id="company"><br>
         </div>
 
         <div id="item-section" style="display: none;">
             <label for="item">Item Name:</label>
-            <input type="text" id="item" /><br />
+            <input type="text" id="item"><br>
 
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" /><br />
+            <input type="number" id="quantity"><br>
         </div>
 
         <div id="individual-section" style="display: none;">
             <label for="name">Name:</label>
-            <input type="text" id="name" required /><br />
+            <input type="text" id="name" required><br>
 
             <label for="number">Number:</label>
-            <input type="text" id="number" required /><br />
+            <input type="text" id="number" required><br>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" required /><br />
+            <input type="email" id="email" required><br>
 
-            <label for="message">Message:</label><br />
-            <textarea id="message" required></textarea><br />
+            <label for="message">Message:</label><br>
+            <textarea id="message" required></textarea><br>
         </div>
 
-        <input type="submit" id="submit-btn" value="Submit" style="display: none;" />
-
+        <input type="submit" id="submit-btn" value="Submit" style="display: none;">
     </form>
-
     <script>
         var firebaseConfig = {
             apiKey: "AIzaSyBosHwwgKcr7rIZq-tBByTVPtuSGXdvI6M",
