@@ -38,6 +38,7 @@ body {
 .heading_container h2 {
   font-weight: bold;
   position: relative;
+  background-size:1500px;
 }
 
 .heading_container h2::before {
