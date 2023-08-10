@@ -2,7 +2,7 @@ body {
     font-family: "Roboto", sans-serif;
     color: #000000;
     background-image: url(/images/indexbg.jpg);
-    background-size: 1000px ;
+    background-size: 100% ;
 }
 
 .layout_padding2 {
