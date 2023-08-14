@@ -5,6 +5,10 @@ body {
     background-size: 100% ;
 }
 
+.layout_padding {
+    padding: 30px 0;
+}
+
 .layout_padding2 {
   padding: 45px 0;
 }
@@ -204,9 +208,8 @@ a:focus {
   color: #ffffff;
 }
 
-
 .slider_section #carouselExampleIndicators {
-  width: 100%;
+    width: 100%;
 }
 
 .slider_section .row {
@@ -262,6 +265,7 @@ a:focus {
         margin-top: -30px;
     }
 
+
 .slider_section #carouselExampleIndicators .carousel-indicators {
   bottom: 45px;
   margin: 0;
@@ -294,6 +298,7 @@ a:focus {
     padding: 45px 60px;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+ 
 }
 
     .how_section .how_container .box {
@@ -313,15 +318,17 @@ a:focus {
             justify-content: center;
             height: 200px;
             background-color: #f6f5f7;
+            margin-top: 3px;
         }
 
             .how_section .how_container .box .img-box svg {
                 width: 75px;
                 height: auto;
+                margin-top: 20px;
             }
 
         .how_section .how_container .box .detail-box {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
             .how_section .how_container .box .detail-box h5 {
@@ -357,6 +364,7 @@ a:focus {
 
         .how_section .how_container .box:hover .detail-box {
             margin-top: 15px;
+           
         }
 
             .how_section .how_container .box:hover .detail-box h5::before {
@@ -397,14 +405,17 @@ a:focus {
         }
 .custom-bg-color {
     background-image: url(/images/howbg.jpg);
-    height: 650px;
+    height: 600px;
     background-position: center; /* Adjust this value as needed */
     background-repeat: no-repeat;
+    
 }
 
 .about_section {
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
+    padding: 20px 0;
+  
 }
 
     .about_section .box {
@@ -415,19 +426,23 @@ a:focus {
         .about_section .box .img-box {
             flex: 0 0 auto;
             margin-left: -500px;
-            
+            image-resolution: from-image;
+           
         }
-        
+
 
     .about_section .detail-box {
         flex: 0 0 auto;
         margin-left: 600px;
-        margin-top: -350px;
+        margin-top: -425px;
+        text-align:justify;
+      
     }
 
     .about_section .box .img-box img {
-        -webkit-filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));
-        filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));
+       /* -webkit-filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));*/
+       
     }
 
     .about_section .btn-box {
@@ -462,11 +477,10 @@ a:focus {
 
 
 section.app_section {
-  color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#30ae69), to(#072e85));
-  background: linear-gradient(to right, #30ae69, #072e85);
-  
-  
+    color: #ffffff;
+    background: -webkit-gradient(linear, left top, right top, from(#30ae69), to(#072e85));
+    background: linear-gradient(to right, #30ae69, #072e85);
+    padding: 30px 0;
 }
 
 section.app_section .row {
