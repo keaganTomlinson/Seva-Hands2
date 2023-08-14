@@ -33,7 +33,7 @@ body {
 }
 
 .layout_padding {
-  padding: 90px 0;
+  padding: 30px 0;
 }
 
 .layout_padding2 {
@@ -220,70 +220,71 @@ a:focus {
 /*end header section*/
 
 .slider_section {
-  height: 90%;
-  display: flex;
-  align-items: center;
-  color: $white;
-
-  #carouselExampleIndicators {
-    width: 100%;
-  }
-
-  .row {
+    height: 90%;
+    display: flex;
     align-items: center;
-  }
+    color: $white;
 
-  .box {
-    margin: 125px 0;
-  }
-
-  .detail-box {
-    h1 {
-      font-size: 4rem;
-      font-weight: bold;
+    #carouselExampleIndicators {
+        width: 100%;
     }
 
-    h2 {
-      font-weight: bold;
-      font-size: 2.5rem;
+    .row {
+        align-items: center;
     }
 
-    p {
-      margin-top: 25px;
+    .box {
+        margin: 125px 0;
     }
 
-    a {
-      @include hero_btn(#171717, $white, 10px, 45px, 5px);
-      margin-top: 35px;
-    }
-  }
 
-  .img-box {
-    img {
-      width: 100%;
-    }
-  }
-
-  #carouselExampleIndicators {
-    .carousel-indicators {
-      bottom: 45px;
-      margin: 0;
-      align-items: center;
-
-      li {
-        width: 14px;
-        height: 14px;
-        background-color: transparent;
-        border: 2px solid $white;
-        border-radius: 100%;
-        opacity: 1;
-
-        &.active {
-          border: 4px solid $white;
+    .detail-box {
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
         }
-      }
+
+        h2 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin-top: 25px;
+        }
+
+        a {
+            @include hero_btn(#171717, $white, 10px, 45px, 5px);
+            margin-top: 35px;
+        }
     }
-  }
+
+    .img-box {
+        img {
+            width: 100%;
+        }
+    }
+
+    #carouselExampleIndicators {
+        .carousel-indicators {
+            bottom: 45px;
+            margin: 0;
+            align-items: center;
+
+            li {
+                width: 14px;
+                height: 14px;
+                background-color: transparent;
+                border: 2px solid $white;
+                border-radius: 100%;
+                opacity: 1;
+
+                &.active {
+                    border: 4px solid $white;
+                }
+            }
+        }
+    }
 }
 
 // end slider section
@@ -387,13 +388,14 @@ a:focus {
     flex-direction: column;
     align-items: center;
 
+
     .img-box {
       display: flex;
       justify-content: center;
       margin-top: 25px;
 
       img {
-        max-width: 70%;
+        max-width: 90%;
         filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));
       }
     }
