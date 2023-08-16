@@ -16,14 +16,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
     <script>
-        var firebaseConfig = {
-             apiKey: "AIzaSyBosHwwgKcr7rIZq-tBByTVPtuSGXdvI6M",
-            authDomain: "sevahandstest.firebaseapp.com",
-            databaseURL: "https://sevahandstest-default-rtdb.firebaseio.com",
-            projectId: "sevahandstest",
-            storageBucket: "sevahandstest.appspot.com",
-            messagingSenderId: "915339149367",
-            appId: "1:915339149367:web:d43ebd85eaa83f61183fb2"
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgtKfKalMrFgJ3DinCkqhjGShppxxDgIU",
+            authDomain: "sevahands-4c62d.firebaseapp.com",
+            projectId: "sevahands-4c62d",
+            storageBucket: "sevahands-4c62d.appspot.com",
+            messagingSenderId: "585674093065",
+            appId: "1:585674093065:web:a2187fe9bf194037f63ed8",
+            measurementId: "G-VH3KMBZPLJ"
         };
 
         firebase.initializeApp(firebaseConfig);
@@ -54,13 +54,38 @@
             descriptionElement.textContent = event.Description;
             eventElement.appendChild(descriptionElement);
 
+            var locationElement = document.createElement('p');
+            locationElement.textContent = 'Location: ' + event.Location;
+            eventElement.appendChild(locationElement);
+
+            var directionsButton = document.createElement('a');
+            directionsButton.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(event.Location);
+            directionsButton.target = '_blank';
+            directionsButton.textContent = 'Get Directions';
+            eventElement.appendChild(directionsButton);
+
             return eventElement;
         }
 
-         function formatEventDate(date) {
-      var options = { day: 'numeric', month: 'long', year: 'numeric' };
-      return date ? new Date(date.toDate()).toLocaleDateString(undefined, options) : '';
-    }
+        function formatEventDate(date) {
+            var options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date ? new Date(date.toDate()).toLocaleDateString(undefined, options) : '';
+        }
+
+        function addEvent(name, date, description, location) {
+            db.collection("Events").add({
+                name: name,
+                Date: date,
+                Description: description,
+                Location: location
+            })
+            .then(function(docRef) {
+                console.log("Event added with ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Error adding event: ", error);
+            });
+        }
     </script>
 </body>
 </html>
