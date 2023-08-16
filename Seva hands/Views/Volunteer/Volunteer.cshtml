@@ -898,7 +898,7 @@
     <form onsubmit="submitForm(event)">
         <div>
             <label for="type">Select Type:</label><br>
-            <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')">
+            <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')" checked >
             <label for="type-individual">Individual</label><br>
 
             <input type="checkbox" name="type" value="company" id="type-company" onclick="handleCheckboxChange('type-company')">
@@ -907,6 +907,7 @@
             <input type="checkbox" name="type" value="donate" id="type-donate" onclick="handleCheckboxChange('type-donate')">
             <label for="type-donate">Donate Items</label><br>
         </div>
+
 
         <div id="company-section" style="display: none;">
             <label for="company">Company Name:</label>
@@ -939,6 +940,7 @@
     </form>
     <script>
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        handleCheckboxChange('type-individual')
         const firebaseConfig = {
             apiKey: "AIzaSyAgtKfKalMrFgJ3DinCkqhjGShppxxDgIU",
             authDomain: "sevahands-4c62d.firebaseapp.com",
