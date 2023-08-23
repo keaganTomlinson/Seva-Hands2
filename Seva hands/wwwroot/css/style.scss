@@ -2,6 +2,7 @@ $black: #000000;
 $white: #ffffff;
 $primary1: #30ae69;
 
+
 @mixin main-font {
   font-family: "Roboto", sans-serif;
 }
@@ -383,6 +384,7 @@ a:focus {
 .about_section {
   text-align: center;
 
+
   .box {
     display: flex;
     flex-direction: column;
@@ -396,7 +398,7 @@ a:focus {
 
       img {
         max-width: 90%;
-        filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));
+      /*  filter: drop-shadow(0px 36px 13px rgba(0, 0, 0, 0.3));*/
       }
     }
   }

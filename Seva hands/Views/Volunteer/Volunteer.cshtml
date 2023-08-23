@@ -9,7 +9,7 @@
         body {
             font-family: "Roboto", sans-serif;
             color: #000000;
-            background-image: url(/images/volunteerbackground.png);
+          /*  background-image: url(/images/howbg.png);*/ /*edit background -- to change */
             background-size: 100%;
             
 
@@ -53,6 +53,8 @@
                 font-weight: bold;
                 position: relative;
                 background-size: 1500px;
+                padding-top:30px;
+                 
             }
 
                 .heading_container h2::before {
@@ -66,6 +68,17 @@
                     -webkit-transform: translateX(-50%);
                     transform: translateX(-50%);
                 }
+
+
+
+
+
+
+
+
+
+
+
 
         /*header section*/
         .hero_area {
@@ -870,11 +883,13 @@
         input[type="number"],
         input[type="email"],
         textarea {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 8px;
-            margin-bottom: 10px;
-            width: 45%;
+          display: block; /* Set display property to block to make them stack vertically */
+    border: 1px solid #ccc;
+/*    border-radius: 5px;*/
+    padding: 8px;
+    margin-bottom: 10px; /* Add margin to separate textboxes */
+    width: 50%; /* Set width to 100% to take up full container width */
+            
         }
 
         /* Style the submit button */
@@ -882,7 +897,7 @@
             background-color: black; /* Set background color to black */
             color: white; /* Set text color to white */
             border: none; /* Remove border */
-            border-radius: 10px; /* Add rounded edges */
+            border-radius: 0px; /* Add rounded edges */
             padding: 10px 20px; /* Add padding for better appearance */
             cursor: pointer; /* Change cursor to pointer on hover */
         }
@@ -894,11 +909,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 </head>
 <body>
-    <h1>Volunteer Page</h1>
+    <div class="heading_container">
+                <h2>
+                   Volunteer to be part of our journey
+                </h2>
+            </div>
     <form onsubmit="submitForm(event)">
         <div>
             <label for="type">Select Type:</label><br>
-            <input type="checkbox" name="type" value="individual" id="type-individual" onclick="handleCheckboxChange('type-individual')" checked >
+            <input type="checkbox" name="type" value="individual" id="type-individual"  onclick="handleCheckboxChange('type-individual')" checked  >
             <label for="type-individual">Individual</label><br>
 
             <input type="checkbox" name="type" value="company" id="type-company" onclick="handleCheckboxChange('type-company')">
