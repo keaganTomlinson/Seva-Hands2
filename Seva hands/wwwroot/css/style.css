@@ -229,6 +229,16 @@ a:focus {
 
 }
 
+    .slider_section .detail-box h10 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+
+
+
+
+
 .slider_section .detail-box h2 {
   font-weight: bold;
   font-size: 2.5rem;
@@ -249,7 +259,7 @@ a:focus {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
-  margin-top: 35px;
+  margin-top: 105px;
 }
 
 .slider_section .detail-box a:hover {
@@ -260,7 +270,7 @@ a:focus {
 }
 
     .slider_section .img-box img {
-        width: 100%;
+        width: 120%;
         margin-left: -80px;
         margin-top: -30px;
     }
@@ -300,6 +310,11 @@ a:focus {
     flex-wrap: wrap;
  
 }
+
+
+
+
+
 
     .how_section .how_container .box {
         text-align: center;
