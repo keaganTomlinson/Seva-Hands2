@@ -41,7 +41,6 @@
                 var event = doc.data();
                 var eventElement = createEventElement(event);
                 eventsContainer.appendChild(eventElement);
-                console.log(event);
             });
         });
 
@@ -49,7 +48,7 @@
             var eventElement = document.createElement('div');
 
             var titleElement = document.createElement('h3');
-            titleElement.textContent = event.Name;
+            titleElement.textContent = event.name;
             eventElement.appendChild(titleElement);
 
             var dateElement = document.createElement('p');
