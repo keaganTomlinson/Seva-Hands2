@@ -5,67 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Page</title>
     <style>
+.event-container {
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-        .heading_container {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            text-align: center;
-        }
+.event-container h3.year {
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 1px solid #b1b1b1;
+}
 
-            .heading_container h2 {
-                font-weight: bold;
-                position: relative;
-                padding-top: 30px;
-            }
+.event-container .event {
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  border-radius: 8px;
+  margin: 32px 0;
+}
 
-                .heading_container h2::before {
-                    content: "";
-                    position: absolute;
-                    bottom: -6px;
-                    left: 50%;
-                    width: 75px;
-                    height: 5px;
-                    background-color: #30ae69;
-                    -webkit-transform: translateX(-50%);
-                    transform: translateX(-50%);
-                }
+.event .event-left {
+  background: #222;
+  min-width: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 8px 48px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px 0 0 8px;
+}
 
-     
+.event .event-left .date {
+  font-size: 56px;
+}
 
-        h3 {
-            color: #333;
-        }
+.event .event-left .month {
+  font-size: 16px;
+  font-weight: normal;
+}
 
-        p {
-            margin-bottom: 10px;
-        }
+.event .event-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
+}
 
+.event .event-right h3.event-title {
+  font-size: 24px;
+  margin: 24px 0 10px 0;
+  color: #218bbb;
+  text-transform: uppercase;
+}
 
-        .event {
-            width: 200px;
-            margin: 10px; /* Add margin to create spacing between event boxes */
-            padding: 20px;
-            text-align: center;
-            background-color: #FFFDD0;
-            border: 2px solid black;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-weight: bold;
-        }
+.event .event-right .event-timing {
+  background: #fff8ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 8px;
+  border-radius: 16px;
+  margin: 24px 0;
+  font-size: 14px;
+}
 
-            .event::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 5px; /* Adjust the thickness of the underline as needed */
-                background-color: #30ae69;
-                margin-top: 10px; /* Adjust the spacing between the box and the underline as needed */
-                border-radius: 2px; /* Optional: Add some rounding to the underline ends */
-            }
+.event .event-right .event-timing img {
+  height: 20px;
+  padding-right: 8px;
+}
+media (max-width: 550px) {
+  .event {
+    flex-direction: column;
+  }
+
+  .event .event-left {
+    padding: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .event .event-left .date,
+  .event .event-left .month {
+    display: inline-block;
+    font-size: 24px;
+  }
+
+  .event .event-left .event-date {
+    padding: 10px 0;
+  }
+}
 
      
     </style>
@@ -87,8 +117,8 @@
             Upcoming Events
         </h2>
     </div>
-    <div class="container mt-4">
-        <div id="eventsContainer" class="row"></div>
+    <div class="event-container mt-4">
+        <!-- Your events will be added here dynamically from Firebase -->
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
