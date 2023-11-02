@@ -156,13 +156,14 @@
                                     <div class="col-md-7">
                                         <div class="detail-box">
                                             <div>
-
                                                 <h10>
                                                     It liberates you in unspeakable ways and sends through ripples of goodness in multiple directions.
-
                                                 </h10>
+                                                <div class="sandwich-count">
+                                                    
+                                                </div>
                                                 <div class="">
-                                                    <a href="@ViewBag.PaypalUrl" style="border-radius:0px;">
+                                                    <a href="@ViewBag.PaypalUrl" style="border-radius: 0px;">
                                                         Donate
                                                     </a>
                                                 </div>
@@ -170,15 +171,33 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5">
-                                      <div class="img-box">
-                                         <img src="~/images/carTwo.png"/>
+                                        <div class="img-box">
+                                            <img src="~/images/carTwo.png" />
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <style>
+                        .sandwich-count p {
+                            color: black;
+                          font-size: 20px;
+                           
+                        }
+                    </style>
+                    <script>
+                        var numberOfSandwiches = 100; // You can change this value to whatever you want
+                        var h10Element = document.querySelector('h10');
+                        var sandwichCountElement = document.querySelector('.sandwich-count');
+
+                        if (h10Element && sandwichCountElement) {
+                            var variableElement = document.createElement('p');
+                            variableElement.textContent = 'Number of sandwiches made: ' + numberOfSandwiches;
+                            sandwichCountElement.appendChild(variableElement);
+                        }
+                    </script>
 
 
                     <div class="carousel-item">
@@ -217,10 +236,13 @@
                                     <div class="col-md-7">
                                         <div class="detail-box">
                                             <div>
-                                               <h10>
-                                                    We're grateful for ongoing support in our school lunch program for Reservoir Hills and Clare Estate schools.
-                                            </h10>
                                                
+                                               <h10 style="text-align:justify">
+                                                  We are grateful for the support we receive to sustain our school lunch programme, 
+                                                  supporting a number of schools in the Reservoir Hills and Clare Estate area,
+                                                  in Durban, KZN
+
+                                               </h10>
                                                 <div class="">
                                                     <a href="@ViewBag.PaypalUrl" style="border-radius:0px;">
                                                         Donate
@@ -229,8 +251,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="img-box">
+                                    <div class="col-md-5" style="margin-top:-25px">
+                                        <div class="img-box" style="margin-left:25px">
                                              <img src="~/images/carFive.png" alt="" />
                                         </div>
                                     </div>
@@ -251,66 +273,56 @@
                 Our Services
             </h2>
         </div>
-        <div class="how_container" style="margin-top: -30px;">
-            <div class="box">
+        <div class="how_container" style="margin-left: -30px;">
+            <div class="box" style="margin-top: -30px;">
                 <div class="img-box">
                     <img src="~/images/foodseva.png" alt="" />
                 </div>
                 <div class="detail-box">
                   
-                    <p style="text-align: justify;">
+                    <p style="text-align: justify; font-size:14px">
                          
-                        Seva Hands uplifts the lives of
-                        vulnerable sectors of our community
-                        through nutrition based programs to
-                        improve and increase capacity building
-                        in marginalized communities,
-                        protecting the lives of vulnerable women, the aged and children
-                        ,empowering the youth through
-                        capacity building through
-                        knowledge,psycho social sngineering
-                        through various methods and disaster
-                        relief drives
-                    </p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="~/images/howwedoit.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  
-                    <p style="text-align: justify;">
-                        As women we wear many hats in our
-                        lives – wife, mother, daughter, sister,
-                        friend and employee however in all
-                        these roles we play, Seva Hands will
-                        not be who we are without our
-                        donors, sponsors and our army of
-                        volunteers. We are indebted to our
-                        support team it is only through their
-                        kindness and generosity we are able
-                        to accomplish the things we do.
+Seva Hands flagship project, our Sandwich Drive, serves over 500 lunches a week to learners in the Reservoir Hills
+and Clare Estate community. During the dark times of COVID we sustained our efforts and were buoyed by the testimony
+of teachers that shared stories of guaranteed attendance on the days we supplied lunches. One sandwich can make a difference
+- we have seen this for ourselves. The larger message through this time was the fact that we were not just providing a sandwich, 
+we were steadfast in our support. Hope, faith and love came in the form of a sandwich.
 
                     </p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box" style="margin-top: -30px;">
+                <div class="img-box">
+                    <img src="~/images/peoplesevahands-fotor-2023110105346.jpg" alt="" />
+                </div>
+                <div class="detail-box">
+                  
+                    <p style="text-align: justify; font-size:14px">
+                        
+                        Our annual Diwali Hamper Drive has been a staple of Seva Hands since 2019 and accompanying this annual
+                        drive is the provision of ad-hoc hampers. As Seva Hands grew organically, our community faced a battery
+                        of challenges and we geared ourselves to support them. The power of collective efforts saw us supporting 
+                        those in need during COVID, the floods and riots. Being receptive to our community is what drives us as we
+                        know the value of uplifting those in need when they are feeling the lowest.
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="box" style="margin-top: -30px;">
                 <div class="img-box">
                     <img src="~/images/helpedchild.png" alt="" />
                 </div>
                 <div class="detail-box">
-                
-                   <p style="text-align: justify;">
-                       Seva Hands flagship project, the Weekly 
-                       Sandwich Drive, serves over 500 lunches. 
-                       We also distribute hampers in our annual 
-                       drive and on an adhoc basis. We are in touch
-                       with Senior Citizens homes and Homes of Safety,
-                       assisting where we can. During the school
-                       holidays we distribute the bread, we are 
-                       fortunate enough to receive, to the various 
-                       Homes and communities around us.
+
+                    <p style="text-align: justify;font-size:14px">
+
+                        
+                        Seva Hands also provides sandwiches to the local Senior Citizens while they are waiting for their pension payouts.
+                        We maintain contact with the local Senior Citizens homes and Homes of Safety, assisting where we can. During the
+                        school holidays we distribute the bread, we are fortunate enough to receive, to the various Homes and communities 
+                        around us. We have witnessed the joy on the faces of those receiving the simplest of gifts and that fills our cups!
+
 
                     </p>
                 </div>
@@ -336,20 +348,15 @@
                     <div class="img-box">
                         <video controls width="550" height="550">
                             <source src="~/images/shVideo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+     
                         </video>
+                       
                     </div>
                     <div class="detail-box" style="font-size: 18px;" >
                         <p class="padded-paragraph">
-                            Seva Hands is a non-profit organization that was established in 2019. We are a group of four friends
-                            driven by a common desire to make a positive impact on our community. Our journey began with the simple
-                            goal of providing sandwiches to underprivileged students in local schools. However, the challenges posed
-                            by the pandemic prompted us to rethink our objectives and expand our reach to create a more significant
-                            and sustainable difference in the lives of the people we serve.
-                             Today, Seva Hands has evolved from a service endeavor to the formation of a non-profit company called Seva
-                            Hands Enterprise (SHE). Our commitment to our schools and the Sandwich Drive remains steadfast, but we have
-                            also recognized the importance of empowering our community in more sustainable ways. We believe that by
-                            enabling individuals to take care of themselves, we can create a stronger and more resilient society.
+                            Seva Hands is a non-profit organisation that was established in 2019 by a group of friends. What brought us together  was our common desire to make a positive impact on our community. Our journey began with a simple goal of providing school lunches to learners in need in our local schools. We saw the link between the sustenance of a child, their succesful performance in school and the step change in the quality of the lives of each child AND their respective families.
+                            The challenges of COVID illustrated the need to be receptive to the broader needs of our community and we actively rose to support these needs. The cornerstones of operating with absolute transparency and integrity, coupled with attaining all relevant certification, has seen our network grow and this feeds into our desire to grow our reach and positively impact upon more lives.
+
                         </p>
                         <!-- <div class="btn-box">
                             <a href="">Read More</a>
